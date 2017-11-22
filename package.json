@@ -7,6 +7,7 @@
     "jquery": "^3.2.1"
   },
   "devDependencies": {
+    "less": "^2.7.3",
     "webpack": "^3.8.1"
   },
   "scripts": {
