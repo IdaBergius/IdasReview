@@ -1,11 +1,16 @@
 
-let movieData = require("./data");
-let $ = require("jquery");
+import {Review} from  "./interfaces";
+import {movieData} from "./data";
+import * as $ from "jquery";
 
-function renderMovie(movie){
+function renderMovie(data: Review){
+  
+    $("#movietitle").data.title
+    $("#moviedescription").data.description
+    
 
-    $("#movietitle").text(movie.title);
-    $("#moviedescription ").text(movie.description);
+    // $("#movietitle").text(movie.title);
+    // $("#moviedescription ").text(movie.description);
 
 //     document.getElementById("movietitle").innerText = movie.title;
 //     document.getElementById("moviedescription").innerText = movie.description;
@@ -13,9 +18,9 @@ function renderMovie(movie){
 
 $("#movieactors").empty();
 
-  for(let i=0; i<movie.actorList.length; i++){
+  for(let i=0; i<data.actorList.length; i++){
 
-    $("#movieactors").append("<li>" + movie.actorList[i] + "</li>");
+    $("#movieactors").append("<li>" + data.actorList[i] + "</li>");
 
   }
 //    let actors="";
@@ -43,6 +48,7 @@ renderMovie(movieData);
 function changeStarRating(rating){
     
       $(".filled").removeClass("filled");
+      
     
       for(let i=1; i<=rating; i++){
     
@@ -53,7 +59,7 @@ function changeStarRating(rating){
     }
 
     
-$(".stars").on("click", "span", function(e){
+$(".stars").on("click", "span", (e) => {
     
       let star = $(e.target);
     
